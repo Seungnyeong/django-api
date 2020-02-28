@@ -3,4 +3,8 @@ from . import views
 
 app_name = "rooms"
 
-urlpatterns = [path("list/", views.ListRoomsView.as_view())]
+urlpatterns = [
+    path("", views.RoomsView.as_view()), 
+    path("search/", views.room_serach),
+    path("<int:pk>/", views.RoomView.as_view()),
+]
